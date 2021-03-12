@@ -10,8 +10,6 @@ import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 import OurServicesSection from "./Sections/OurServicesSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
 
 const useStyles = makeStyles(styles);
 
@@ -56,9 +54,6 @@ export default function HomePage(props) {
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
                     <OurServicesSection />
-                    <TeamSection />
-                    <WorkSection />
-                    <div id="pricing">pricing</div>
                 </div>
             </div>
             <Footer />
