@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "../../components/Header/Header.js";
@@ -12,17 +12,20 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 import OurServicesSection from "./Sections/OurServicesSection.js";
 
 const useStyles = makeStyles(styles);
-
+const farsiFont = { fontFamily: "Vazir" };
 export default function HomePage(props) {
     const classes = useStyles();
+    const [isFarsi, setFarsi] = useState(false);
     const { ...rest } = props;
     return (
         <div id="home">
             <Header
                 color="transparent"
                 brand="Arshan Junk Removal"
+                farsiBrand="حذف ضایعات ارشان"
+                isFarsi={isFarsi}
                 onClickDescription={() => window.scrollTo(0, 0)}
-                rightLinks={<HeaderLinks />}
+                rightLinks={<HeaderLinks isFarsi={isFarsi} />}
                 fixed
                 changeColorOnScroll={{
                     height: 300,
@@ -34,17 +37,17 @@ export default function HomePage(props) {
                 <div className={classes.container} id="home-top">
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={12} align={"center"}>
-                            <h1 className="landing-page-title" style={{ marginBottom: 0 }}>
-                                Arshan Junk Removal
+                            <h1 className="landing-page-title" style={{ marginBottom: 0, ...farsiFont }}>
+                                {isFarsi ? "حذف ضایعات ارشان" : "Arshan Junk Removal"}
                             </h1>
-                            <h3 style={{ color: "white", marginTop: 0 }} className="call-info" id="call us today">
-                                CALL US TODAY
+                            <h3 style={{ color: "white", marginTop: 0, ...farsiFont }} className="call-info" id="call us today">
+                                {isFarsi ? " با ما تماس بگیرید" : "CALL US TODAY"}
                             </h3>
                             <br />
                             <Button size={"lg"} href="tel:647-381-4747">
-                                <h5 href="tel:647-381-4747" style={{ margin: 0, padding: 0 }}>
-                                    <i className="fas fa-phone" style={{ marginRight: 10 }} />
-                                    (647) 381-4747
+                                <h5 href="tel:647-381-4747" style={{ margin: 0, padding: 0, ...farsiFont }}>
+                                    {isFarsi ? "(۶۴۷) ۳۸۱-۴۷۴۷" : "(647) 381-4747"}
+                                    <i className="fas fa-phone" style={{ marginLeft: 10 }} />
                                 </h5>
                             </Button>
                         </GridItem>

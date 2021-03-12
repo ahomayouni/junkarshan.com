@@ -40,7 +40,7 @@ export default function Header(props) {
             document.body.getElementsByTagName("header")[0].classList.remove(classes[changeColorOnScroll.color]);
         }
     };
-    const { color, rightLinks, leftLinks, brand, fixed, absolute, onClickDescription } = props;
+    const { color, rightLinks, leftLinks, brand, fixed, absolute, onClickDescription, isFarsi, farsiBrand } = props;
     const appBarClasses = classNames({
         [classes.appBar]: true,
         [classes[color]]: color,
@@ -49,7 +49,7 @@ export default function Header(props) {
     });
     const brandComponent = (
         <Button className={classes.title} onClick={onClickDescription}>
-            {brand}
+            <div style={{ fontFamily: "Vazir, sans-serif" }}>{isFarsi ? farsiBrand : brand}</div>
         </Button>
     );
     return (
@@ -102,8 +102,10 @@ Header.propTypes = {
     rightLinks: PropTypes.node,
     leftLinks: PropTypes.node,
     brand: PropTypes.string,
+    farsiBrand: PropTypes.string,
     onClickDescription: PropTypes.any,
     fixed: PropTypes.bool,
+    isFarsi: PropTypes.bool,
     absolute: PropTypes.bool,
     changeColorOnScroll: PropTypes.shape({
         height: PropTypes.number.isRequired,

@@ -20,7 +20,8 @@
     "react-scripts": "3.4.1",
     "react-scroll": "^1.8.2",
     "react-slick": "0.26.1",
-    "react-swipeable-views": "0.13.9"
+    "react-swipeable-views": "0.13.9",
+    "vazir-font": "^27.2.2"
   },
   "devDependencies": {
     "@babel/cli": "7.10.1",

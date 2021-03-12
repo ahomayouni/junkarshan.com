@@ -3,13 +3,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-import Button from "components/CustomButtons/Button.js";
-import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
+import Button from "../../components/CustomButtons/Button.js";
+import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles(styles);
+function farsiFont(isFarsi) {
+    return { fontFamily: "Vazir", fontSize: isFarsi ? 16 : 12 };
+}
 
 export default function HeaderLinks(props) {
     const classes = useStyles();
+    const { isFarsi } = props;
     return (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
@@ -17,7 +22,7 @@ export default function HeaderLinks(props) {
                     onClick={() => document.querySelector("#our-services").scrollIntoView({ behavior: "smooth", block: "center" })}
                     color="transparent"
                     className={classes.navLink}>
-                    Our Services
+                    <div style={farsiFont(isFarsi)}>{isFarsi ? "خدمات ما" : "Our Services"}</div>
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
@@ -25,25 +30,25 @@ export default function HeaderLinks(props) {
                     color="transparent"
                     className={classes.navLink}
                     onClick={() => document.querySelector("#pricing").scrollIntoView({ behavior: "smooth", block: "center" })}>
-                    Pricing
+                    <div style={farsiFont(isFarsi)}>{isFarsi ? "قیمت های ما" : "Pricing"}</div>
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Button href="#contact us" color="transparent" target="_blank" className={classes.navLink}>
-                    Contact Us
+                    <div style={farsiFont(isFarsi)}>{isFarsi ? "با ما تماس بگیرید" : "Contact us"}</div>
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Tooltip id="solang-tooltip" title="See solang.ca" placement={window.innerWidth > 959 ? "top" : "left"} classes={{ tooltip: classes.tooltip }}>
                     <Button href="http://solang.ca" color="transparent" target="_blank" className={classes.navLink}>
-                        Bin Rental
+                        <div style={farsiFont(isFarsi)}>{isFarsi ? "اجاره بین" : "Bin Rental"}</div>
                     </Button>
                 </Tooltip>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Tooltip
                     id="instagram-tooltip"
-                    title="Follow us on instagram"
+                    title={isFarsi ? "ما را در اینستاگرام دنبال کنید" : "Follow us on instagram"}
                     placement={window.innerWidth > 959 ? "top" : "left"}
                     classes={{ tooltip: classes.tooltip }}>
                     <Button color="transparent" href="https://www.instagram.com/arshanjunk/" target="_blank" className={classes.navLink}>
@@ -54,3 +59,7 @@ export default function HeaderLinks(props) {
         </List>
     );
 }
+
+HeaderLinks.propTypes = {
+    isFarsi: PropTypes.bool
+};
