@@ -4,10 +4,11 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
+import "assets/scss/index.scss";
 
 // pages for this product
 import Components from "./views/Components/Components.js";
-import HomePage from "./views/LandingPage/LandingPage.js";
+import HomePage from "./views/HomePage/HomePage";
 import ProfilePage from "./views/ProfilePage/ProfilePage.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 
