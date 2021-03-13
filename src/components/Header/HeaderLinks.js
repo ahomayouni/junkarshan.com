@@ -6,6 +6,8 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Button from "../../components/CustomButtons/Button.js";
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
 import PropTypes from "prop-types";
+import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
+import Translate from "@material-ui/icons/Translate";
 
 const useStyles = makeStyles(styles);
 function farsiFont(isFarsi) {
@@ -55,6 +57,30 @@ export default function HeaderLinks(props) {
                         <i className={classes.socialIcons + " fab fa-instagram"} />
                     </Button>
                 </Tooltip>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <CustomDropdown
+                    isFarsi={isFarsi}
+                    left
+                    buttonText={"Language"}
+                    farsiButtonText={"زبان"}
+                    hoverColor="info"
+                    dropdownHeader="Dropdown Header"
+                    buttonIcon={Translate}
+                    buttonProps={{
+                        className: classes.navLink,
+                        color: "transparent"
+                    }}
+                    dropdownList={[
+                        "Action",
+                        "Another action",
+                        "Something else here",
+                        { divider: true },
+                        "Separated link",
+                        { divider: true },
+                        "One more separated link"
+                    ]}
+                />
             </ListItem>
         </List>
     );
