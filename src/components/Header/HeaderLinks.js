@@ -8,15 +8,13 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 import PropTypes from "prop-types";
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
 import Translate from "@material-ui/icons/Translate";
+import { farsiFont } from "../../helpers";
 
 const useStyles = makeStyles(styles);
-function farsiFont(isFarsi) {
-    return { fontFamily: "Vazir", fontSize: isFarsi ? 16 : 12 };
-}
 
 export default function HeaderLinks(props) {
     const classes = useStyles();
-    const { isFarsi } = props;
+    const { isFarsi, setFarsi } = props;
     return (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
@@ -65,21 +63,19 @@ export default function HeaderLinks(props) {
                     buttonText={"Language"}
                     farsiButtonText={"زبان"}
                     hoverColor="info"
-                    dropdownHeader="Dropdown Header"
                     buttonIcon={Translate}
                     buttonProps={{
                         className: classes.navLink,
                         color: "transparent"
                     }}
-                    dropdownList={[
-                        "Action",
-                        "Another action",
-                        "Something else here",
-                        { divider: true },
-                        "Separated link",
-                        { divider: true },
-                        "One more separated link"
-                    ]}
+                    dropdownList={["English", "فارسی"]}
+                    onClick={(t) => {
+                        if (t === "فارسی") {
+                            setFarsi(true);
+                        } else {
+                            setFarsi(false);
+                        }
+                    }}
                 />
             </ListItem>
         </List>
@@ -87,5 +83,6 @@ export default function HeaderLinks(props) {
 }
 
 HeaderLinks.propTypes = {
-    isFarsi: PropTypes.bool
+    isFarsi: PropTypes.bool,
+    setFarsi: PropTypes.func
 };

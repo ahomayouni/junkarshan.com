@@ -89,7 +89,7 @@ export default function CustomDropdown(props) {
             <div>
                 <Button aria-label="Notifications" aria-owns={anchorEl ? "menu-list" : null} aria-haspopup="true" {...buttonProps} onClick={handleClick}>
                     {icon}
-                    <div style={farsiFont(isFarsi)}>{isFarsi ? farsiButtonText : buttonText}</div>
+                    <div style={{ fontFamily: "Vazir", fontSize: isFarsi ? 12 : 16 }}>{!isFarsi ? farsiButtonText : buttonText}</div>
 
                     {caret ? <b className={caretClasses} /> : null}
                 </Button>
