@@ -31,7 +31,10 @@ export default function OurServicesSection(props) {
                         <br />
                         {isFarsi ? ".و تخریبات داخلی" : "as well as indoor demolition projects."}
                         <br />
-                        {isFarsi ? ".همچنین بین " + "های ۱۴ و ۲۱ یارد برای اجاره موجود می باشد " : "We also provide 14- or 21-cubic-yard bins."}
+                        {
+                            // eslint-disable-next-line
+                            isFarsi ? ".همچنین بین " + "های ۱۴ و ۲۱ یارد برای اجاره موجود می باشد " : "We also provide 14- or 21-cubic-yard bins."
+                        }
                     </h5>
                 </GridItem>
             </GridContainer>
@@ -49,7 +52,10 @@ export default function OurServicesSection(props) {
                         <InfoArea title={isFarsi ? "تخریبات داخلی" : "Indoor Demolition"} icon={MeetingRoom} iconColor="success" vertical isFarsi />
                         <p style={infoParagraphStyle}>
                             {isFarsi ? (
-                                <div>خدمات تخریبات داخلی مانند از بین بردن دیوار های خشک کاشی، عایق بندی و غیره ،(drywall)</div>
+                                <>
+                                    <div>،(Drywall) خدمات تخریبات داخلی مانند از بین بردن دیوار های خشک</div>
+                                    <div>کاشی، عایق بندی و غیره</div>
+                                </>
                             ) : (
                                 "We offer indoor demolition services such as removing drywalls, tiles, insulation, etc. Contact us for a free estimate."
                             )}
