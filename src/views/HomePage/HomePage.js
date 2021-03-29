@@ -15,7 +15,7 @@ const useStyles = makeStyles(styles);
 const farsiFont = { fontFamily: "Vazir" };
 export default function HomePage(props) {
     const classes = useStyles();
-    const [isFarsi, setFarsi] = useState(true);
+    const [isFarsi, setFarsi] = useState(false);
     const { ...rest } = props;
     return (
         <div id="home">
@@ -59,7 +59,6 @@ export default function HomePage(props) {
                     <OurServicesSection isFarsi={isFarsi} />
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

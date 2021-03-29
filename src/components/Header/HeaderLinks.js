@@ -26,22 +26,25 @@ export default function HeaderLinks(props) {
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Button
-                    color="transparent"
-                    className={classes.navLink}
-                    onClick={() => document.querySelector("#pricing").scrollIntoView({ behavior: "smooth", block: "center" })}>
-                    <div style={farsiFont(isFarsi)}>{isFarsi ? "قیمت های ما" : "Pricing"}</div>
-                </Button>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-                <Button href="#contact us" color="transparent" target="_blank" className={classes.navLink}>
-                    <div style={farsiFont(isFarsi)}>{isFarsi ? "با ما تماس بگیرید" : "Contact us"}</div>
-                </Button>
-            </ListItem>
-            <ListItem className={classes.listItem}>
                 <Tooltip id="solang-tooltip" title="See solang.ca" placement={window.innerWidth > 959 ? "top" : "left"} classes={{ tooltip: classes.tooltip }}>
                     <Button href="http://solang.ca" color="transparent" target="_blank" className={classes.navLink}>
                         <div style={farsiFont(isFarsi)}>{isFarsi ? "اجاره بین" : "Bin Rental"}</div>
+                    </Button>
+                </Tooltip>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <Button color="transparent" href="https://g.page/arshan-junk-removal?gm" target="_blank" className={classes.navLink}>
+                    <i className={classes.socialIcons + " fab fa-google"} />
+                </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <Tooltip
+                    id="instagram-tooltip"
+                    title={isFarsi ? "ما را در فیسبوک دنبال کنید" : "Follow us on facebook"}
+                    placement={window.innerWidth > 959 ? "top" : "left"}
+                    classes={{ tooltip: classes.tooltip }}>
+                    <Button color="transparent" href="https://www.facebook.com/arshanjunk" target="_blank" className={classes.navLink}>
+                        <i className={classes.socialIcons + " fab fa-facebook"} />
                     </Button>
                 </Tooltip>
             </ListItem>
