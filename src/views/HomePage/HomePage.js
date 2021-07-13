@@ -36,7 +36,6 @@ export default function HomePage(props) {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-    console.log(windowDimensions);
     const mobileHeader = windowDimensions.width < 600 ? { fontSize: 34 } : {};
     const mobileSubHeader = windowDimensions.width < 600 ? { fontSize: 22 } : {};
 
