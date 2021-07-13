@@ -10,6 +10,7 @@ import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 import OurServicesSection from "./Sections/OurServicesSection.js";
+import CarouselSection from "./Sections/CarouselSection.js";
 
 const useStyles = makeStyles(styles);
 const farsiFont = { fontFamily: "Vazir" };
@@ -21,7 +22,7 @@ export default function HomePage(props) {
         <div id="home">
             <Header
                 color="transparent"
-                brand="Arshan Junk Removal"
+                brand="Arshan Junk Removal / Bin Rentals"
                 farsiBrand="خدمات جمع آوری مصالح ساختمانی ارشان"
                 isFarsi={isFarsi}
                 onClickDescription={() => window.scrollTo(0, 0)}
@@ -37,10 +38,12 @@ export default function HomePage(props) {
                 <div className={classes.container} id="home-top">
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={12} align={"center"}>
-                            <h1 className="landing-page-title" style={{ marginBottom: 0, ...farsiFont }}>
-                                {isFarsi ? "جمع آوری مصالح ساختمانی" : "Arshan Junk Removal"}
+                            <h1 className="landing-page-title" style={{ marginBottom: 40, ...farsiFont }}>
+                                <span style={{ borderBottom: "5px solid #ce3b0f" }}>
+                                    {isFarsi ? "جمع آوری مصالح ساختمانی" : "Arshan Junk Removal & Bin Rental"}
+                                </span>
                             </h1>
-                            <h3 style={{ color: "white", marginTop: 0, ...farsiFont }} className="call-info" id="call us today">
+                            <h3 style={{ color: "white", marginTop: 0, ...farsiFont, marginBottom: 0 }} className="call-info" id="call us today">
                                 {isFarsi ? " با ما تماس بگیرید" : "CALL US TODAY"}
                             </h3>
                             <br />
@@ -57,6 +60,11 @@ export default function HomePage(props) {
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
                     <OurServicesSection isFarsi={isFarsi} />
+                </div>
+            </div>
+            <div className={classNames(classes.main, classes.mainRaised)}>
+                <div className={classes.container}>
+                    <CarouselSection isFarsi={isFarsi} />
                 </div>
             </div>
         </div>

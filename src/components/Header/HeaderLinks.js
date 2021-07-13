@@ -8,7 +8,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 import PropTypes from "prop-types";
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
 import Translate from "@material-ui/icons/Translate";
-import { farsiFont } from "../../helpers";
+import { farsiFontNoColor } from "../../helpers";
 
 const useStyles = makeStyles(styles);
 
@@ -22,13 +22,13 @@ export default function HeaderLinks(props) {
                     onClick={() => document.querySelector("#our-services").scrollIntoView({ behavior: "smooth", block: "center" })}
                     color="transparent"
                     className={classes.navLink}>
-                    <div style={farsiFont(isFarsi)}>{isFarsi ? "خدمات ما" : "Our Services"}</div>
+                    <div style={farsiFontNoColor(isFarsi)}>{isFarsi ? "خدمات ما" : "Our Services"}</div>
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Tooltip id="solang-tooltip" title="See solang.ca" placement={window.innerWidth > 959 ? "top" : "left"} classes={{ tooltip: classes.tooltip }}>
                     <Button href="http://solang.ca" color="transparent" target="_blank" className={classes.navLink}>
-                        <div style={farsiFont(isFarsi)}>{isFarsi ? "اجاره بین" : "Bin Rental"}</div>
+                        <div style={farsiFontNoColor(isFarsi)}>{isFarsi ? "اجاره بین" : "Bin Rental"}</div>
                     </Button>
                 </Tooltip>
             </ListItem>

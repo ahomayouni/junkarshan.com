@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import { farsiFontWithoutSize } from "../../../helpers";
 
 const useStyles = makeStyles(styles);
-const infoParagraphStyle = { color: "#999999", margin: "0 5px 10px", fontFamily: "Vazir" };
+const infoParagraphStyle = { color: "#3C4858", margin: "0 5px 10px", fontFamily: "Vazir" };
 
 export default function OurServicesSection(props) {
     const classes = useStyles();
@@ -33,7 +33,7 @@ export default function OurServicesSection(props) {
                         <br />
                         {
                             // eslint-disable-next-line
-                            isFarsi ? ".همچنین بین " + "های ۱۴ و ۲۱ یارد برای اجاره موجود می باشد " : "We also provide 14- or 21-cubic-yard bins."
+                            isFarsi ? ".همچنین بین " + "های ۱۴ و ۲۱ یارد برای اجاره موجود می باشد " : "We also provide 14, 16, or 20-cubic-yard bins."
                         }
                     </h5>
                 </GridItem>
@@ -45,7 +45,7 @@ export default function OurServicesSection(props) {
                         <p style={infoParagraphStyle}>
                             {isFarsi
                                 ? "جمع آوری تقریباً هرگونه مصالح ساختمانی، مصالح نوسازی خوانه، چوب، وسایل گاراژ، مبلمان و موارد دیگر"
-                                : "We remove almost anything construction material, wood, renovation waste, garage waste, scrap metals, furniture, and more."}
+                                : "We remove almost anything related to construction material, wood, renovation waste, garage waste, scrap metals, furniture, and more. We charge $450 + HST for a full truck load."}
                         </p>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4}>
@@ -81,7 +81,8 @@ export default function OurServicesSection(props) {
                                 </div>
                             ) : (
                                 <>
-                                    Refer to{" "}
+                                    We offer 14, 16, and 20 yard bins for rent. We charge a flat rate of $400 + HST for 14 yard bins and $450 + HST for 16 and
+                                    20 yard bins. Contact our number above or refer to{" "}
                                     <Tooltip
                                         id="instagram-tooltip"
                                         title="solang.ca"
