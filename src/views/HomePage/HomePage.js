@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "../../components/Header/Header.js";
-import Footer from "../../components/Footer/Footer.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 import Button from "../../components/CustomButtons/Button.js";
@@ -12,12 +11,35 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 import OurServicesSection from "./Sections/OurServicesSection.js";
 import CarouselSection from "./Sections/CarouselSection.js";
 
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+        width,
+        height
+    };
+}
+
 const useStyles = makeStyles(styles);
 const farsiFont = { fontFamily: "Vazir" };
+
 export default function HomePage(props) {
     const classes = useStyles();
     const [isFarsi, setFarsi] = useState(false);
     const { ...rest } = props;
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    console.log(windowDimensions);
+    const mobileHeader = windowDimensions.width < 600 ? { fontSize: 34 } : {};
+    const mobileSubHeader = windowDimensions.width < 600 ? { fontSize: 22 } : {};
+
     return (
         <div id="home">
             <Header
@@ -39,11 +61,14 @@ export default function HomePage(props) {
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={12} align={"center"}>
                             <h1 className="landing-page-title" style={{ marginBottom: 40, ...farsiFont }}>
-                                <span style={{ borderBottom: "5px solid #ce3b0f" }}>
+                                <span style={{ borderBottom: "5px solid #ce3b0f", lineHeight: 1.75, ...mobileHeader }}>
                                     {isFarsi ? "جمع آوری مصالح ساختمانی" : "Arshan Junk Removal & Bin Rental"}
                                 </span>
                             </h1>
-                            <h3 style={{ color: "white", marginTop: 0, ...farsiFont, marginBottom: 0 }} className="call-info" id="call us today">
+                            <h3
+                                style={{ color: "white", marginTop: 0, ...farsiFont, marginBottom: 0, ...mobileSubHeader }}
+                                className="call-info"
+                                id="call us today">
                                 {isFarsi ? " با ما تماس بگیرید" : "CALL US TODAY"}
                             </h3>
                             <br />
