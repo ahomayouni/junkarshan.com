@@ -44,11 +44,6 @@ export default function FormSection() {
             setWarningIsOpen(true);
             return;
         }
-        const form = `
-        Name: ${name}
-        Email address: ${email}
-        Message: ${msg}
-        `.toLocaleLowerCase();
         emailjs.send(
             "service_xsig3yl",
             "template_ssdlhas",
