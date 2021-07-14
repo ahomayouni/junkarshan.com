@@ -10,6 +10,7 @@ import Parallax from "../../components/Parallax/Parallax.js";
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 import OurServicesSection from "./Sections/OurServicesSection.js";
 import CarouselSection from "./Sections/CarouselSection.js";
+import FormSection from "./Sections/FormSection.js";
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -91,6 +92,7 @@ export default function HomePage(props) {
                     <CarouselSection isFarsi={isFarsi} />
                 </div>
             </div>
+            <FormSection></FormSection>
         </div>
     );
 }

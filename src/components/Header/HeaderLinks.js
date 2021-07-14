@@ -26,6 +26,22 @@ export default function HeaderLinks(props) {
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
+                <Button
+                    onClick={() => document.querySelector("#our-work").scrollIntoView({ behavior: "smooth", block: "center" })}
+                    color="transparent"
+                    className={classes.navLink}>
+                    <div style={farsiFontNoColor(isFarsi)}>{isFarsi ? "نمونه کار ما" : "Our Work"}</div>
+                </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <Button
+                    onClick={() => document.querySelector("#contact-us").scrollIntoView({ behavior: "smooth", block: "center" })}
+                    color="transparent"
+                    className={classes.navLink}>
+                    <div style={farsiFontNoColor(isFarsi)}>{isFarsi ? "با ما تماس بگیرید" : "Contact Us"}</div>
+                </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
                 <Tooltip id="solang-tooltip" title="See solang.ca" placement={window.innerWidth > 959 ? "top" : "left"} classes={{ tooltip: classes.tooltip }}>
                     <Button href="http://solang.ca" color="transparent" target="_blank" className={classes.navLink}>
                         <div style={farsiFontNoColor(isFarsi)}>{isFarsi ? "اجاره بین" : "Bin Rental"}</div>

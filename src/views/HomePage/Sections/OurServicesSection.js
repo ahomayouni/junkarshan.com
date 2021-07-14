@@ -21,7 +21,7 @@ export default function OurServicesSection(props) {
         <div className={classes.section}>
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={8}>
-                    <h2 style={farsiFontWithoutSize(isFarsi)} className={classes.title} id="our-services">
+                    <h2 style={{ ...farsiFontWithoutSize(isFarsi), color: "#ce3b0f" }} className={classes.title} id="our-services">
                         {isFarsi ? "خدمات ما" : "Our Services"}
                     </h2>
                     <h5 className={classes.description} style={farsiFontWithoutSize(isFarsi)}>

@@ -38,7 +38,7 @@ export default function CarouselSection(props) {
         <div className={classes.section}>
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={8}>
-                    <h2 style={farsiFontWithoutSize(isFarsi)} className={classes.title} id="our-work">
+                    <h2 style={{ ...farsiFontWithoutSize(isFarsi), color: "#ce3b0f" }} className={classes.title} id="our-work">
                         {isFarsi ? "نمونه کار ما" : "Our Work"}
                     </h2>
                     <ImageList className={classes.imageList} cols={12}>
